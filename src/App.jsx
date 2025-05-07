@@ -4,6 +4,8 @@ import './App.css'
 import MainLayout from './layouts/MainLayout'
 import SearchForm from './components/SearchForm'
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+
 function App() {
     const [searchTerm, setSearchTerm] = useState('')
     const [meals, setMeals] = useState([])
@@ -15,7 +17,7 @@ function App() {
         setLoading(true)
         setError('') // Clear any previous errors
         try {
-            const url = 'https://www.themealdb.com/api/json/v1/1/random.php'
+            const url = `${API_BASE_URL}/random.php`
             const randomMeals = await Promise.all(
                 Array.from({ length: 8 }).map(async () => {
                     const response = await fetch(url)
@@ -36,12 +38,13 @@ function App() {
     }, [])
 
     const handleSearch = (query) => {
-        console.log('Search query:', query)
+        if (query.trim() === '') return
         setError('') // Clear any previous errors
         setHeading(`Search results for "${query}"`)
         setLoading(true)
-        if (query.trim() === '') return
-        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query.trim()}`
+        setMeals([]) // Clear previous meals
+
+        const url = `${API_BASE_URL}/search.php?s=${query.trim()}`
         try {
             fetch(url)
                 .then((response) => response.json())
