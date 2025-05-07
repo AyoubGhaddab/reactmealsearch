@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
-function SearchForm({ onSearch, searchTerm, setSearchTerm }) {
+import React, { useRef, useEffect } from 'react'
+function SearchForm({ onSearch, searchTerm, setSearchTerm, handleLucky }) {
     const inputRef = useRef(null)
 
     useEffect(() => {
@@ -14,7 +14,10 @@ function SearchForm({ onSearch, searchTerm, setSearchTerm }) {
         onSearch(query)
         // your logic here
     }
-
+    const handleFeelingLucky = (event) => {
+        event.stopPropagation() // Prevent handleSubmit from firing
+        handleLucky()
+    }
     return (
         <form onSubmit={handleSubmit} className="flex items-center gap-2">
             <input
@@ -32,6 +35,14 @@ function SearchForm({ onSearch, searchTerm, setSearchTerm }) {
                 className="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600"
             >
                 Search
+            </button>
+            <button
+                onClick={handleFeelingLucky}
+                type="button"
+                name="search"
+                className="px-4 py-2 bg-emerald-400 text-white rounded hover:bg-emerald-600 cursor-pointer"
+            >
+                I am Feeling Lucky
             </button>
         </form>
     )

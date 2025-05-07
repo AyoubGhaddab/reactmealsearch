@@ -76,7 +76,14 @@ export const MealProvider = ({ children }) => {
 
     return (
         <MealContext.Provider
-            value={{ meals, loading, error, heading, searchMeals }}
+            value={{
+                meals,
+                loading,
+                error,
+                heading,
+                searchMeals,
+                fetchRandomMeals,
+            }}
         >
             {children}
         </MealContext.Provider>

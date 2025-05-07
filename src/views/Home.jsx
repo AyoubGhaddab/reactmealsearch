@@ -5,12 +5,17 @@ import MealList from '../components/MealList'
 import { MealContext } from '../context/MealContext'
 
 const Home = () => {
-    const { meals, loading, error, heading, searchMeals } =
+    const { meals, loading, error, heading, searchMeals, fetchRandomMeals } =
         useContext(MealContext)
     const [searchTerm, setSearchTerm] = useState('')
 
     const handleSearch = (query) => {
         searchMeals(query)
+    }
+    const handleLucky = () => {
+        // Implement the logic for "I am Feeling Lucky" button
+        console.log('I am Feeling Lucky clicked')
+        fetchRandomMeals()
     }
 
     return (
@@ -20,6 +25,7 @@ const Home = () => {
                     onSearch={handleSearch}
                     searchTerm={searchTerm}
                     setSearchTerm={setSearchTerm}
+                    handleLucky={handleLucky}
                 />
             </div>
             {error && (
