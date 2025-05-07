@@ -1,8 +1,8 @@
 import React from 'react'
 import { useContext } from 'react'
-import { ThemeContext } from '../ThemeContext'
+import { ThemeContext } from '../context/ThemeContext'
 
-const Card = ({ image, title, description }) => {
+const Card = ({ image, title = 'Unkonw meal', description }) => {
     const { isDarkMode } = useContext(ThemeContext)
 
     return (
