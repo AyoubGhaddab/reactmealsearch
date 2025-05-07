@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { ThemeContext } from '../context/ThemeContext'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const MainLayout = ({ children }) => {
     const { isDarkMode } = useContext(ThemeContext)
@@ -16,6 +17,7 @@ const MainLayout = ({ children }) => {
         >
             <Header />
             {children}
+            <Footer />
         </div>
     )
 }
