@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import MainLayout from '../layouts/MainLayout'
 import { ThemeContext } from '../context/ThemeContext'
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+
 const Meal = () => {
     const { mealId } = useParams()
     const [meal, setMeal] = useState(null)
@@ -14,7 +16,7 @@ const Meal = () => {
         const fetchMeal = async () => {
             try {
                 const response = await fetch(
-                    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
+                    `${API_BASE_URL}/lookup.php?i=${mealId}`
                 )
                 const data = await response.json()
                 setMeal(data.meals[0])
