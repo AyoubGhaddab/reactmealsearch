@@ -44,7 +44,7 @@ function SearchForm({ onSearch, searchTerm, setSearchTerm, handleLucky }) {
                     onClick={handleFeelingLucky}
                     type="button"
                     name="search"
-                    className="px-4 py-2 bg-emerald-400 text-white rounded hover:bg-emerald-600 cursor-pointer w-full sm:w-auto"
+                    className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-600 cursor-pointer w-full sm:w-auto"
                 >
                     J'ai de la chance
                 </button>
