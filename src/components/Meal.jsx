@@ -21,6 +21,7 @@ const Meal = () => {
                 const data = await response.json()
                 setMeal(data.meals[0])
             } catch (err) {
+                console.error('Error fetching meal details:', err)
                 setError(
                     'Échec du chargement des détails du repas. Veuillez réessayer plus tard.'
                 )
