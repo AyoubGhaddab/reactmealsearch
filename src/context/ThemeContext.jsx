@@ -6,7 +6,7 @@ export function ThemeProvider({ children }) {
     const [isDarkMode, setIsDarkMode] = useState(() => {
         // Retrieve the theme from localStorage or default to false
         const savedTheme = localStorage.getItem('isDarkMode')
-        return savedTheme ? JSON.parse(savedTheme) : false
+        return savedTheme ? JSON.parse(savedTheme) : true
     })
 
     const toggleTheme = () => {
