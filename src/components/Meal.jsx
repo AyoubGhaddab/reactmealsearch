@@ -22,7 +22,7 @@ const Meal = () => {
                 setMeal(data.meals[0])
             } catch (err) {
                 setError(
-                    'Failed to fetch meal details. Please try again later.'
+                    'Échec du chargement des détails du repas. Veuillez réessayer plus tard.'
                 )
             } finally {
                 setLoading(false)
@@ -34,7 +34,7 @@ const Meal = () => {
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-screen">
-                <p className="text-gray-500">Loading...</p>
+                <p className="text-gray-500">Chargement...</p>
             </div>
         )
     }
@@ -50,7 +50,7 @@ const Meal = () => {
     if (!meal) {
         return (
             <div className="flex items-center justify-center min-h-screen">
-                <p className="text-gray-500">Meal not found.</p>
+                <p className="text-gray-500">Repas introuvable.</p>
             </div>
         )
     }
@@ -86,9 +86,9 @@ const Meal = () => {
                         rel="noopener noreferrer"
                         className="inline-block bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 mb-4"
                     >
-                        Watch on YouTube
+                        Voir sur YouTube
                     </a>
-                    <h2 className="text-2xl font-bold mb-2">Ingredients</h2>
+                    <h2 className="text-2xl font-bold mb-2">Ingrédients</h2>
                     <ul className="list-disc list-inside">
                         {ingredients.map((item, index) => (
                             <li key={index}>

@@ -35,12 +35,12 @@ const Home = () => {
             )}
             {loading && (
                 <div className="flex items-center justify-center mt-4 mb-4">
-                    <p className="text-gray-500">Loading...</p>
+                    <p className="text-gray-500">Chargement...</p>
                 </div>
             )}
             {!loading && meals.length === 0 && !error && (
                 <div className="flex items-center justify-center mt-4 mb-4">
-                    <p className="text-gray-500">No meals found</p>
+                    <p className="text-gray-500">Aucun repas trouvé</p>
                 </div>
             )}
             {!loading && meals.length > 0 && (

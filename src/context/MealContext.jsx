@@ -8,7 +8,7 @@ export const MealProvider = ({ children }) => {
     const [meals, setMeals] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
-    const [heading, setHeading] = useState('Random Meals')
+    const [heading, setHeading] = useState('Repas aléatoires')
 
     useEffect(() => {
         const savedMeals = JSON.parse(localStorage.getItem('meals'))
@@ -17,7 +17,7 @@ export const MealProvider = ({ children }) => {
         if (savedMeals && savedMeals.length > 0) {
             setMeals(savedMeals)
             setHeading(
-                lastQuery ? `Search results for "${lastQuery}"` : 'Saved Meals'
+                lastQuery ? `Résultats de la recherche pour "${lastQuery}"` : 'Repas sauvegardés'
             )
         } else {
             fetchRandomMeals()
@@ -41,7 +41,7 @@ export const MealProvider = ({ children }) => {
             localStorage.setItem('lastQuery', '')
         } catch (error) {
             console.error('Error fetching random meals:', error)
-            setError('Failed to fetch random meals. Please try again later.')
+            setError('Échec de la récupération des repas aléatoires. Veuillez réessayer plus tard.')
         } finally {
             setLoading(false)
         }
@@ -50,7 +50,7 @@ export const MealProvider = ({ children }) => {
     const searchMeals = (query) => {
         if (query.trim() === '') return
         setError('')
-        setHeading(`Search results for "${query}"`)
+        setHeading(`Résultats de la recherche pour "${query}"`)
         setLoading(true)
         setMeals([])
 
@@ -60,7 +60,7 @@ export const MealProvider = ({ children }) => {
             .then((data) => {
                 setMeals(data.meals || [])
                 if (!data.meals) {
-                    setError('No meals found for the search query.')
+                    setError('Aucun repas trouvé pour la recherche.')
                 }
                 localStorage.setItem('meals', JSON.stringify(data.meals || []))
                 localStorage.setItem('lastQuery', query)
@@ -68,7 +68,7 @@ export const MealProvider = ({ children }) => {
             .catch((error) => {
                 console.error('Error fetching search results:', error)
                 setError(
-                    'Failed to fetch search results. Please try again later.'
+                    'Échec de la récupération des résultats de recherche. Veuillez réessayer plus tard.'
                 )
             })
             .finally(() => setLoading(false))

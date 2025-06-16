@@ -12,11 +12,11 @@ function Header() {
             }`}
         >
             <Link to="/" className="text-xl font-bold">
-                🍏 Meal Search 
+                🍏 Recherche de repas
             </Link>
             <div className="flex items-center gap-4">
                 <Link to="/favorites" className="text-lg">
-                    Favorites
+                    Favoris
                 </Link>
                 <button
                     onClick={toggleTheme}
@@ -26,7 +26,7 @@ function Header() {
                             : 'bg-gray-200 text-gray-900'
                     }`}
                 >
-                    {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+                    {isDarkMode ? 'Mode clair' : 'Mode sombre'}
                 </button>
             </div>
         </header>

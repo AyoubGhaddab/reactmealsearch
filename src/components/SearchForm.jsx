@@ -26,7 +26,7 @@ function SearchForm({ onSearch, searchTerm, setSearchTerm, handleLucky }) {
                 value={searchTerm}
                 ref={inputRef}
                 onInput={(e) => setSearchTerm(e.target.value)}
-                placeholder="Search meals..."
+                placeholder="Rechercher des repas..."
                 className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
             <button
@@ -34,7 +34,7 @@ function SearchForm({ onSearch, searchTerm, setSearchTerm, handleLucky }) {
                 name="search"
                 className="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600"
             >
-                Search
+                Rechercher
             </button>
             <button
                 onClick={handleFeelingLucky}
@@ -42,7 +42,7 @@ function SearchForm({ onSearch, searchTerm, setSearchTerm, handleLucky }) {
                 name="search"
                 className="px-4 py-2 bg-emerald-400 text-white rounded hover:bg-emerald-600 cursor-pointer"
             >
-                I am Feeling Lucky
+                J'ai de la chance
             </button>
         </form>
     )
