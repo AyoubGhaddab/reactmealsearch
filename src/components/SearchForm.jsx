@@ -19,7 +19,10 @@ function SearchForm({ onSearch, searchTerm, setSearchTerm, handleLucky }) {
         handleLucky()
     }
     return (
-        <form onSubmit={handleSubmit} className="flex items-center gap-2">
+        <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row items-center gap-2 w-full max-w-xl"
+        >
             <input
                 type="text"
                 name="search"
@@ -27,23 +30,25 @@ function SearchForm({ onSearch, searchTerm, setSearchTerm, handleLucky }) {
                 ref={inputRef}
                 onInput={(e) => setSearchTerm(e.target.value)}
                 placeholder="Rechercher des repas..."
-                className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 flex-1 w-full"
             />
-            <button
-                type="submit"
-                name="search"
-                className="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600"
-            >
-                Rechercher
-            </button>
-            <button
-                onClick={handleFeelingLucky}
-                type="button"
-                name="search"
-                className="px-4 py-2 bg-emerald-400 text-white rounded hover:bg-emerald-600 cursor-pointer"
-            >
-                J'ai de la chance
-            </button>
+            <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+                <button
+                    type="submit"
+                    name="search"
+                    className="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600 w-full sm:w-auto"
+                >
+                    Rechercher
+                </button>
+                <button
+                    onClick={handleFeelingLucky}
+                    type="button"
+                    name="search"
+                    className="px-4 py-2 bg-emerald-400 text-white rounded hover:bg-emerald-600 cursor-pointer w-full sm:w-auto"
+                >
+                    J'ai de la chance
+                </button>
+            </div>
         </form>
     )
 }

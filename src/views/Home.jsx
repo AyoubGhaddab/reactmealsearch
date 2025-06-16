@@ -20,13 +20,18 @@ const Home = () => {
 
     return (
         <MainLayout>
-            <div className="flex items-center justify-center mt-3">
-                <SearchForm
-                    onSearch={handleSearch}
-                    searchTerm={searchTerm}
-                    setSearchTerm={setSearchTerm}
-                    handleLucky={handleLucky}
-                />
+            <div className="m-4 flex flex-col items-center justify-center mt-3">
+                <p className="mb-4 text-xl text-gray-600">
+                    Accédez à de nouvelles recettes instantanément : cliquez sur &apos;J&apos;ai de la chance&apos;, ou affinez votre recherche par ingrédient
+                </p>
+                <div className="w-full flex items-center justify-center">
+                    <SearchForm
+                        onSearch={handleSearch}
+                        searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}
+                        handleLucky={handleLucky}
+                    />
+                </div>
             </div>
             {error && (
                 <div className="flex items-center justify-center mt-4 mb-4">
