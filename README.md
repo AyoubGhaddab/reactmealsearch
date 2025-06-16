@@ -1,13 +1,22 @@
-# React + Vite
+# React Meal Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React Meal Search est une application web moderne permettant de rechercher, explorer et sauvegarder des recettes de cuisine du monde entier.
 
-Currently, two official plugins are available:
+## Fonctionnalités principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Recherche par ingrédient** : Trouvez des recettes en saisissant un ou plusieurs ingrédients.
+- **Recette aléatoire** : Cliquez sur "J'ai de la chance" pour découvrir instantanément une recette surprise.
+- **Favoris** : Ajoutez vos recettes préférées à votre liste de favoris pour les retrouver facilement.
+- **Affichage détaillé** : Consultez les instructions, ingrédients et images pour chaque recette.
 
-## Expanding the ESLint configuration
+## Langue
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# reactmealsearch
+> La recherche de recettes et d'ingrédients est actuellement disponible en **anglais uniquement**.  
+> Une version française arrivera bientôt !
+
+## Démo
+
+Essayez l'application ici :  
+[https://ayoubghaddab.github.io/reactmealsearch/](https://ayoubghaddab.github.io/reactmealsearch/)
+
+
