@@ -1,6 +1,6 @@
 # React Meal Search
 
-React Meal Search est une application web moderne permettant de rechercher, explorer et sauvegarder des recettes de cuisine du monde entier.
+React Meal Search est une application web permettant de rechercher, explorer et sauvegarder des recettes de cuisine du monde entier.
 
 ## Fonctionnalités principales
 
