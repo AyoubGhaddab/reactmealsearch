@@ -12,7 +12,7 @@ function Header() {
             }`}
         >
             <Link to="/" className="text-xl font-bold">
-                🍏 Meal Search
+                🍏 Meal Search 
             </Link>
             <div className="flex items-center gap-4">
                 <Link to="/favorites" className="text-lg">
