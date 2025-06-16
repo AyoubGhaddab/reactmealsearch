@@ -13,7 +13,7 @@ function App() {
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/meals/:mealId" element={<Meal />} />
             <Route path="/favorites" element={<Favorites />} />
-            <Route path="*" element={<div>404 Not Found</div>} />
+            <Route path="*" element={<Home />} />
         </Routes>
     )
 }
